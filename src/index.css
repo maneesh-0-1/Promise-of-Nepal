@@ -1,0 +1,333 @@
+:root {
+  --himalaya-midnight: #040810;
+  --himalaya-deep-blue: #070F1E;
+  --himalaya-twilight: #0C1A32;
+  --himalaya-azure: #152B52;
+  
+  --aiesec-blue: #037EF3;
+  --aiesec-blue-light: #389BFF;
+  --aiesec-blue-glow: rgba(3, 126, 243, 0.35);
+  
+  --himalaya-gold: #F5A623;
+  --himalaya-gold-light: #FFD166;
+  --himalaya-gold-glow: rgba(245, 166, 35, 0.3);
+  
+  --nepal-crimson: #E63946;
+  --nepal-crimson-deep: #C8102E;
+  
+  --prayer-blue: #0077B6;
+  --prayer-white: #FFFFFF;
+  --prayer-red: #D90429;
+  --prayer-green: #2A9D8F;
+  --prayer-yellow: #E9C46A;
+  
+  --snow-white: #F8FAFC;
+  --snow-glistening: #FFFFFF;
+  --snow-muted: #94A3B8;
+  --snow-dim: #64748B;
+  
+  --rock-dark: #121820;
+  --rock-charcoal: #1C232E;
+  --rock-slate: #2A3442;
+  
+  --glass-bg: rgba(6, 12, 24, 0.68);
+  --glass-card: rgba(12, 22, 42, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(3, 126, 243, 0.4);
+  
+  --font-display: 'Cinzel', serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--himalaya-midnight);
+  color: var(--snow-white);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--himalaya-midnight);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--himalaya-midnight);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(3, 126, 243, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aiesec-blue);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.glass-card {
+  background: var(--glass-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(3, 126, 243, 0.2);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #037EF3 0%, #0056B3 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px -2px rgba(3, 126, 243, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #208FFF 0%, #037EF3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px 0 rgba(3, 126, 243, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(14, 26, 48, 0.6);
+  backdrop-filter: blur(10px);
+  color: var(--snow-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(20, 38, 70, 0.8);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Traditional Dhaka textile subtle border */
+.dhaka-border {
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    #E63946 0px,
+    #E63946 10px,
+    #F5A623 10px,
+    #F5A623 20px,
+    #037EF3 20px,
+    #037EF3 30px,
+    #0A1128 30px,
+    #0A1128 40px
+  );
+  opacity: 0.85;
+}
+
+.dhaka-pattern-subtle {
+  background-image: radial-gradient(rgba(245, 166, 35, 0.15) 1px, transparent 1px),
+                    radial-gradient(rgba(3, 126, 243, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Glowing text and badges */
+.gold-accent {
+  color: var(--himalaya-gold);
+  text-shadow: 0 0 20px var(--himalaya-gold-glow);
+}
+
+.aiesec-glow {
+  text-shadow: 0 0 25px var(--aiesec-blue-glow);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.pulse-dot {
+  animation: pulseGlow 2.4s infinite ease-in-out;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Topographic line decoration */
+.topo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 C 30 50, 60 70, 120 60 M0 30 C 40 20, 80 40, 120 30 M0 90 C 20 100, 70 80, 120 90' stroke='rgba(255,255,255,0.03)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.75rem !important;
+    line-height: 1.08 !important;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 12px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Antigravity Design System Enhancements */
+.antigravity-perspective {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.antigravity-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+@keyframes beaconRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.beacon-ring {
+  animation: beaconRing 2.6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+.summit-beacon-container:hover .summit-hud-card {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.shimmer-hover:hover::after {
+  left: 200%;
+  transition: left 0.75s ease-in-out;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot,
+  .float-slow,
+  .beacon-ring,
+  .antigravity-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
